@@ -4,6 +4,7 @@ import com.example.jwt_auth.application.authentication.AuthenticationFailure;
 import com.example.jwt_auth.application.authentication.AuthenticationResult;
 import com.example.jwt_auth.application.authentication.AuthenticationSuccess;
 import com.example.jwt_auth.application.authentication.SimpleIdProvider;
+import com.example.jwt_auth.domain.model.authentication.JWTToken;
 import com.example.jwt_auth.domain.model.authentication.Password;
 import com.example.jwt_auth.domain.model.authentication.UserId;
 import lombok.RequiredArgsConstructor;
@@ -22,17 +23,17 @@ public class AuthenticationController {
     public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
         UserId userId = new UserId(request.userId());
         Password password = new Password(request.password());
-        
+
         AuthenticationResult result = simpleIdProvider.authenticateUserAndReturnToken(userId, password);
 
         // TODO: logging
         return switch (result) {
-            case AuthenticationSuccess authenticationSuccess -> ResponseEntity
+            case AuthenticationSuccess(JWTToken token) -> ResponseEntity
                     .ok()
-                    .body(new AuthenticationResponse.Success(authenticationSuccess.token().value()));
-            case AuthenticationFailure authenticationFailure -> ResponseEntity
+                    .body(new AuthenticationResponse.Success(token.value()));
+            case AuthenticationFailure(String errorMessage) -> ResponseEntity
                     .badRequest()
-                    .body(new AuthenticationResponse.Failure(authenticationFailure.errorMessage()));
+                    .body(new AuthenticationResponse.Failure(errorMessage));
         };
     }
 }
