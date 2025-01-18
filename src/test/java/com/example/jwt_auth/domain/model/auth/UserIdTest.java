@@ -1,5 +1,6 @@
 package com.example.jwt_auth.domain.model.auth;
 
+import com.example.jwt_auth.domain.model.authentication.UserId;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

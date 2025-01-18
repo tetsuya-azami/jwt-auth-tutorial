@@ -1,9 +1,9 @@
-package com.example.jwt_auth.domain.service.auth;
+package com.example.jwt_auth.domain.service.authentication;
 
-import com.example.jwt_auth.domain.model.auth.Password;
-import com.example.jwt_auth.domain.model.auth.User;
-import com.example.jwt_auth.domain.model.auth.UserId;
-import com.example.jwt_auth.domain.model.auth.UserName;
+import com.example.jwt_auth.domain.model.authentication.Password;
+import com.example.jwt_auth.domain.model.authentication.User;
+import com.example.jwt_auth.domain.model.authentication.UserId;
+import com.example.jwt_auth.domain.model.authentication.UserName;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.example.jwt_auth.domain.model.auth;
+package com.example.jwt_auth.domain.model.authentication;
 
 import org.springframework.util.StringUtils;
 

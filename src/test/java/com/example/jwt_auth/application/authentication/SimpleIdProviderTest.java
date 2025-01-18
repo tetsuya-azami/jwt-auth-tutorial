@@ -1,8 +1,8 @@
 package com.example.jwt_auth.application.authentication;
 
-import com.example.jwt_auth.domain.model.auth.*;
-import com.example.jwt_auth.domain.service.auth.JWTTokenProvider;
-import com.example.jwt_auth.domain.service.auth.UserAuthenticator;
+import com.example.jwt_auth.domain.model.authentication.*;
+import com.example.jwt_auth.domain.service.authentication.JWTTokenProvider;
+import com.example.jwt_auth.domain.service.authentication.UserAuthenticator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

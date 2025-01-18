@@ -1,9 +1,9 @@
-package com.example.jwt_auth.domain.service.auth;
+package com.example.jwt_auth.domain.service.authentication;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.example.jwt_auth.domain.model.auth.JWTToken;
-import com.example.jwt_auth.domain.model.auth.User;
+import com.example.jwt_auth.domain.model.authentication.JWTToken;
+import com.example.jwt_auth.domain.model.authentication.User;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
