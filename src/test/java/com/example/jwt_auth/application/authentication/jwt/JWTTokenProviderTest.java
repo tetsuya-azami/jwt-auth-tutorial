@@ -1,4 +1,4 @@
-package com.example.jwt_auth.application.authentication;
+package com.example.jwt_auth.application.authentication.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

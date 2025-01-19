@@ -1,9 +1,14 @@
 package com.example.jwt_auth.application.authentication;
 
-import com.example.jwt_auth.application.authentication.result.AuthenticationFailure;
-import com.example.jwt_auth.application.authentication.result.AuthenticationResult;
-import com.example.jwt_auth.application.authentication.result.AuthenticationSuccess;
-import com.example.jwt_auth.domain.model.authentication.*;
+import com.example.jwt_auth.application.authentication.jwt.JWTToken;
+import com.example.jwt_auth.application.authentication.jwt.JWTTokenProvider;
+import com.example.jwt_auth.application.authentication.jwt.result.AuthenticationFailure;
+import com.example.jwt_auth.application.authentication.jwt.result.AuthenticationResult;
+import com.example.jwt_auth.application.authentication.jwt.result.AuthenticationSuccess;
+import com.example.jwt_auth.domain.model.authentication.Password;
+import com.example.jwt_auth.domain.model.authentication.User;
+import com.example.jwt_auth.domain.model.authentication.UserId;
+import com.example.jwt_auth.domain.model.authentication.UserName;
 import com.example.jwt_auth.domain.service.authentication.UserAuthenticator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

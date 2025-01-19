@@ -1,4 +1,4 @@
-package com.example.jwt_auth.application.authentication;
+package com.example.jwt_auth.application.authentication.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -14,7 +14,7 @@ public class JWTTokenProvider {
     public JWTToken generateToken(User user) {
         Algorithm algorithm = Algorithm.HMAC256("secret");
         String token = JWT.create()
-                .withIssuer("AuthTokenProducer")
+                .withIssuer(this.getClass().getName())
                 .withSubject(user.id().value())
                 .withExpiresAt(Instant.now().plus(1, ChronoUnit.HOURS))
                 .withIssuedAt(Instant.now())
