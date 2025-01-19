@@ -1,5 +1,8 @@
 package com.example.jwt_auth.application.authentication;
 
+import com.example.jwt_auth.application.authentication.result.AuthenticationFailure;
+import com.example.jwt_auth.application.authentication.result.AuthenticationResult;
+import com.example.jwt_auth.application.authentication.result.AuthenticationSuccess;
 import com.example.jwt_auth.domain.model.authentication.Password;
 import com.example.jwt_auth.domain.model.authentication.User;
 import com.example.jwt_auth.domain.model.authentication.UserId;
