@@ -4,7 +4,6 @@ import com.example.jwt_auth.application.authentication.result.AuthenticationFail
 import com.example.jwt_auth.application.authentication.result.AuthenticationResult;
 import com.example.jwt_auth.application.authentication.result.AuthenticationSuccess;
 import com.example.jwt_auth.domain.model.authentication.*;
-import com.example.jwt_auth.domain.service.authentication.JWTTokenProvider;
 import com.example.jwt_auth.domain.service.authentication.UserAuthenticator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

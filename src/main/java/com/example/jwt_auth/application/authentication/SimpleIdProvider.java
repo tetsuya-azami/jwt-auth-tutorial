@@ -6,7 +6,6 @@ import com.example.jwt_auth.application.authentication.result.AuthenticationSucc
 import com.example.jwt_auth.domain.model.authentication.Password;
 import com.example.jwt_auth.domain.model.authentication.User;
 import com.example.jwt_auth.domain.model.authentication.UserId;
-import com.example.jwt_auth.domain.service.authentication.JWTTokenProvider;
 import com.example.jwt_auth.domain.service.authentication.UserAuthenticator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
