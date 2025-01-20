@@ -61,7 +61,7 @@ class JWTTokenProviderTest {
                 .build()
                 .verify(token);
 
-        assertEquals("AuthTokenProducer", decodedJWT.getIssuer());
+        assertEquals(JWTTokenProvider.class.getName(), decodedJWT.getIssuer());
         assertEquals(expectedUser.id().value(), decodedJWT.getSubject());
         assertEquals(
                 TOKEN_PUBLISHED_INSTANT.truncatedTo(ChronoUnit.SECONDS),
