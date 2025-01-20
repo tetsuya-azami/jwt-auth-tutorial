@@ -1,9 +1,11 @@
-package com.example.jwt_auth.application.authentication.jwt;
+package com.example.jwt_auth.presentation.shared;
 
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.example.jwt_auth.application.authentication.UserInfo;
+import com.example.jwt_auth.application.authentication.jwt.JWTToken;
+import com.example.jwt_auth.domain.model.authentication.UserId;
+import com.example.jwt_auth.domain.model.authentication.UserName;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -32,6 +34,10 @@ public class JWTTokenVerifier {
             return Optional.empty();
         }
 
-        return Optional.of(new UserInfo(decodedJWT.getSubject(), decodedJWT.getClaim("name").asString()));
+        return Optional.of(
+                new UserInfo(
+                        new UserId(decodedJWT.getSubject()),
+                        new UserName(decodedJWT.getClaim("name").asString()))
+        );
     }
 }

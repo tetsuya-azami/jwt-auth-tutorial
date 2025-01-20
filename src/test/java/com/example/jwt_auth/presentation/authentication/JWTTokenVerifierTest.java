@@ -1,11 +1,15 @@
-package com.example.jwt_auth.application.authentication.jwt;
+package com.example.jwt_auth.presentation.authentication;
 
 
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.example.jwt_auth.application.authentication.UserInfo;
+import com.example.jwt_auth.application.authentication.jwt.JWTToken;
+import com.example.jwt_auth.domain.model.authentication.UserId;
+import com.example.jwt_auth.domain.model.authentication.UserName;
+import com.example.jwt_auth.presentation.shared.JWTTokenVerifier;
+import com.example.jwt_auth.presentation.shared.UserInfo;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -54,8 +58,8 @@ class JWTTokenVerifierTest {
         Optional<UserInfo> result = verifier.verifyTokenAndGenerateUserInfo(token);
 
         assertTrue(result.isPresent());
-        assertEquals("user123", result.get().userId());
-        assertEquals("John Doe", result.get().userName());
+        assertEquals(new UserId("user123"), result.get().userId());
+        assertEquals(new UserName("John Doe"), result.get().userName());
     }
 
     @Test
